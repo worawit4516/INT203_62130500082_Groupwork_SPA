@@ -1,6 +1,39 @@
 {
-    "photos": [
-        { "id": 1, "src": "images/1.jpg", "title": "Autumn", "favor": false, "like": 0 },
-        { "id": 2, "src": "images/2.jpg", "title": "Hug & Love", "favor": false, "like": 0 }
-    ]
+  "surveyResults": [
+    {
+      "name": "Somchai2",
+      "rating": "great",
+      "id": 1
+    },
+    {
+      "name": "BB",
+      "rating": "great",
+      "id": 4
+    },
+    {
+      "name": "calculator",
+      "rating": "poor",
+      "id": 5
+    },
+    {
+      "name": "Worawit Makkasan",
+      "rating": "poor",
+      "id": 6
+    },
+    {
+      "name": "Worawit Makkasan",
+      "rating": "poor",
+      "id": 7
+    },
+    {
+      "name": "Reminder",
+      "rating": "poor",
+      "id": 8
+    },
+    {
+      "name": "Worawit Makkasan",
+      "rating": "poor",
+      "id": 9
+    }
+  ]
 }
