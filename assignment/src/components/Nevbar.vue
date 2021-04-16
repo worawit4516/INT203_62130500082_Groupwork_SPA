@@ -19,7 +19,7 @@
 
                 <li class="pl-20  pr-20">
                     <button class="font-light">
-                       <router-link to="/basket">ตะกล้า</router-link>
+                       <router-link to="/basket">Basket</router-link>
                     </button>
                 </li>
 
@@ -64,5 +64,6 @@ li:hover {
     background-color: rgba(14, 14, 14, 1);
     color: gray;
 }
+
 
 </style>

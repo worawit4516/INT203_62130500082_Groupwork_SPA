@@ -1,89 +1,22 @@
 {
-  "surveyResults": [
-    {
-      "name": "Somchai2",
-      "rating": "great",
-      "id": 1
-    },
-    {
-      "name": "BB",
-      "rating": "great",
-      "id": 4
-    },
-    {
-      "name": "calculator",
-      "rating": "poor",
-      "id": 5
-    },
-    {
-      "name": "Worawit Makkasan",
-      "rating": "poor",
-      "id": 6
-    },
-    {
-      "name": "Worawit Makkasan",
-      "rating": "poor",
-      "id": 7
-    },
-    {
-      "name": "Reminder",
-      "rating": "poor",
-      "id": 8
-    },
-    {
-      "name": "Worawit Makkasan",
-      "rating": "poor",
-      "id": 9
-    }
-  ],
   "gameBasket": [
-    {
-      "name": "Somchai2",
-      "lastname": "great",
-      "game": "Farcry-5",
-      "id": 1
-    },
-    {
-      "name": "Welcome.noname",
-      "lastname": "Welcome.noname",
-      "game": "ResidentEvil-7",
-      "id": 2
-    },
     {
       "name": "Earty",
       "lastname": "Earty",
-      "game": "ResidentEvil-7",
+      "game": "CyberPunk2077",
       "id": 3
     },
     {
       "name": "Worawit Makkasan",
       "lastname": "Worawit Makkasan",
       "game": "Farcry 5",
-      "id": 4
-    },
-    {
-      "name": "ShowActivity",
-      "lastname": "ShowActivity",
-      "game": "CyberPunk2077",
       "id": 5
     },
     {
-      "name": "Earty",
-      "lastname": "Earty",
-      "game": "ResidentEvil-7",
-      "id": 6
-    },
-    {
       "name": "Worawit Makkasan",
       "lastname": "Worawit Makkasan",
       "game": "CyberPunk2077",
-      "id": 7
-    },
-    {
-      "name": "Worawit Makkasan",
-      "lastname": "Worawit Makkasan",
-      "game": "Farcry 5",
-      "id": 8
+      "id": 6
     }
   ]
 }

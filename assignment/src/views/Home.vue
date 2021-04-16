@@ -4,6 +4,7 @@
     <nevbar></nevbar>
     <slide></slide>
     <bottom-bar></bottom-bar>
+    
   </div>
 </template>
 
