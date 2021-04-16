@@ -15,7 +15,7 @@ import BottomBar from '../components/BottomBar.vue'
 
 
 export default {
-  name: 'Home',
+  
   components: {
     // HelloWorld,
     Slide,BottomBar

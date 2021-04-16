@@ -13,13 +13,13 @@
                 </li>
                 <li class="pl-20 border-gray-500 border-r pr-20">
                     <button class="font-light">
-                       <router-link to="/basket">สั่งซื้อเกม</router-link>
+                       <router-link to="/gameregistration">สั่งซื้อเกม</router-link>
                     </button>
                 </li>
 
                 <li class="pl-20  pr-20">
                     <button class="font-light">
-                       <router-link to="/basket">ตระกล้า</router-link>
+                       <router-link to="/basket">ตะกล้า</router-link>
                     </button>
                 </li>
 
@@ -27,12 +27,12 @@
             <div class="pr-40">
                 <ul class="flex flex-row font-light">
                     <li class="pr-2 pl-5 border-gray-500 border-r">
-                         <router-link to="/registration">
+                         
                         <button class="font-light">
                             สมัครสมาชิก 
                             <span class="material-icons">how_to_reg</span>
                         </button>
-                        </router-link>
+                   
                     </li>
 
                     <li class="pr-2 pl-5">

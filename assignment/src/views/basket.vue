@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="basket">
      <nevbar></nevbar>
     <h1>This is an about page</h1>
     <bottom-bar></bottom-bar>
@@ -14,7 +14,7 @@ import BottomBar from '../components/BottomBar.vue'
 
 
 export default {
-  name: 'Home',
+  
   components: {
   
   BottomBar

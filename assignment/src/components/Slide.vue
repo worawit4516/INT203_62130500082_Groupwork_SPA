@@ -59,13 +59,13 @@
         </div>
     </div>
 
-        <div>
-        <a class="button-parallelogram border-b border-l border-t border-r border-red-700 hover:text-white hover:bg-red-600" href="https://rov.in.th/">
+        <div><router-link to="/gameregistration">
+        <a class="button-parallelogram border-b border-l border-t border-r border-red-700 hover:text-white hover:bg-red-600" >
             <span class="parallelogram-info pl-2">
                 <span class="material-icons" style="position: absolute; top: 22%; right: 145%">sports_esports</span> สั่งซื้อเกมตอนนี้
             <span class="material-icons" style="position: absolute; top: 22%; left: 145%">play_circle_outline</span>
             </span>
-        </a>
+        </a></router-link>
     </div>
  </div>
 </template>
