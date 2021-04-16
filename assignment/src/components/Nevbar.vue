@@ -6,19 +6,19 @@
             <ul class="flex flex-row">
                 <!-- Spacing -->
                 <!-- Typography-->
-                <li class="pr-20 pl-52 border-gray-500 border-r">
-                    <button class="font-light">
+                <li class="pr-20 pl-52 border-gray-500 border-r ">
+                    <button class="font-light ">
                        <router-link to="/">Home</router-link> 
                     </button>
                 </li>
-                <li class="pl-20 border-gray-500 border-r pr-20">
+                <li class="pl-20 border-gray-500 border-r pr-20 ">
                     <button class="font-light">
                        <router-link to="/gameregistration">สั่งซื้อเกม</router-link>
                     </button>
                 </li>
 
                 <li class="pl-20  pr-20">
-                    <button class="font-light">
+                    <button class="font-light ">
                        <router-link to="/basket">Basket</router-link>
                     </button>
                 </li>
@@ -53,6 +53,8 @@ export default {
     msg: String
   }
 }
+
+
 </script>
 
 <style scoped>
@@ -64,6 +66,9 @@ li:hover {
     background-color: rgba(14, 14, 14, 1);
     color: gray;
 }
-
+li:active{
+    color: red;
+    
+}
 
 </style>

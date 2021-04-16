@@ -9,10 +9,10 @@
       <div class="">
         <table>
           <tr class="text-lg">
-            <td >Firstname</td>
+            <td>Firstname</td>
             <td>Lastname</td>
             <td>Gamename</td>
-            <td >Action</td>
+            <td>Action</td>
           </tr>
           <tr v-for="game in gamesResults" :key="game.id" class="p-1">
             <td>
@@ -25,17 +25,16 @@
               <span> {{ game.game }}</span>
             </td>
             <td>
-              <button @click="showData(game)" class="bg-green-500 m-1 p-2">
+              <button @click="showData(game)" class="bg-green-500 m-1 p-2 text-white">
                 Edit
               </button>
 
-              <button @click="deleteGame(game.id)" class="bg-red-500 m-1 p-2">
+              <button @click="deleteGame(game.id)" class="bg-red-500 m-1 p-2 text-white">
                 Cancle
               </button>
             </td>
           </tr>
         </table>
-
       </div>
     </div>
 
@@ -74,17 +73,16 @@ export default {
     async deleteGame(deleteId) {
       try {
         await fetch(`${this.url}/${deleteId}`, {
-          method: 'DELETE'
-        })
+          method: "DELETE",
+        });
         //filter - higher order function
         this.gamesResults = this.gamesResults.filter(
           (game) => game.id !== deleteId
-        )
+        );
       } catch (error) {
-        console.log(`Could not delete! ${error}`)
+        console.log(`Could not delete! ${error}`);
       }
     },
-    
 
   },
   async created() {
@@ -102,11 +100,11 @@ export default {
 table {
   width: 100%;
   border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 td,
 th {
@@ -114,5 +112,4 @@ th {
   text-align: left;
   padding: 12px 15px;
 }
-
 </style>
