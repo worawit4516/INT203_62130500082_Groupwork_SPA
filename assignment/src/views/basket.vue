@@ -3,7 +3,7 @@
     <nevbar></nevbar>
     <bg-img></bg-img>
     <div class="p-3 bg-white rounded-xl  hover:shadow" id="BasketForm">
-      <h2 class="text-4xl pt-4 pb-4 ">
+      <h2 class="text-4xl pt-4 pb-4 justify-items-center grid">
         รายการเกมของคุณ
       </h2>
       <div class="">
@@ -38,22 +38,21 @@
               >
                 Cancle
               </button>
-            
             </td>
-         
           </tr>
         </table>
       </div>
     </div>
-     <game-form v-if="EditMode" class="max-w-lg" @submitForm='editGame'></game-form>
+    <game-form
+      v-if="EditMode"
+      class="max-w-lg"
+      @submitForm="editGame"
+    ></game-form>
     <bottom-bar class="mt-6"></bottom-bar>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-
 import BottomBar from "../components/BottomBar.vue";
 import GameForm from "../components/GameForm.vue";
 
@@ -67,7 +66,7 @@ export default {
       EditMode: false,
       url: "http://localhost:5000/gameBasket",
       gamesResults: [],
-      gameforEdit:null
+      gameforEdit: null,
     };
   },
   methods: {
@@ -85,10 +84,10 @@ export default {
         await fetch(`${this.url}/${deleteId}`, {
           method: "DELETE",
         });
-        //filter - higher order function
         this.gamesResults = this.gamesResults.filter(
           (game) => game.id !== deleteId
         );
+        alert(`ยกเลิกคำสั่งซื้อเกมเรียบร้อย `);
       } catch (error) {
         console.log(`Could not delete! ${error}`);
       }
@@ -96,13 +95,11 @@ export default {
 
     editModeOpen(game) {
       this.EditMode = true;
-      this.gameforEdit=game
+      this.gameforEdit = game;
     },
 
-   
-    async editGame(enteredName,enteredLastName,game) {
+    async editGame(enteredName, enteredLastName, game) {
       try {
-        
         await fetch(`${this.url}/${this.gameforEdit.id}`, {
           method: "PUT",
           headers: {
@@ -114,8 +111,8 @@ export default {
             game: game,
           }),
         });
-         this.gamesResults = await this.getGamesResult()
-         this.EditMode = false;
+        this.gamesResults = await this.getGamesResult();
+        this.EditMode = false;
       } catch (error) {
         console.log(`Could not edit! ${error}`);
       }
@@ -123,13 +120,11 @@ export default {
   },
   async created() {
     this.gamesResults = await this.getGamesResult();
-    
   },
 };
 </script>
 <style>
-
-#BasketForm{
+#BasketForm {
   position: absolute;
   top: 20%;
   left: 30%;

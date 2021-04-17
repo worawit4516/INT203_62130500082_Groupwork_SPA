@@ -1,8 +1,8 @@
 <template>
-  <div >
+  <div>
     <form id="game-form" @submit.prevent="submitForm">
       <div class="p-3 bg-white rounded-xl max-w-lg hover:shadow">
-        <h2 class="text-4xl pt-4 pb-4 ">
+        <h2 class="text-4xl pt-4 pb-4 justify-items-center grid">
           เลือกเกมที่ต้องการซื้อ
         </h2>
         <flexform>
@@ -89,8 +89,6 @@
         </button>
       </div>
     </form>
-
-    
   </div>
 </template>
 
@@ -101,7 +99,7 @@ export default {
     msg: String,
   },
   data() {
-    return { 
+    return {
       url: "http://localhost:5000/gameBasket",
       enteredName: "",
       enteredLastName: "",
@@ -109,31 +107,26 @@ export default {
       invalidLastNameInput: false,
       invalidNameInput: false,
       invalidGameInput: false,
-      
     };
   },
   methods: {
     submitForm() {
-      this.$emit('submit-Form',this.enteredName,this.enteredLastName,this.game)
+      this.$emit(
+        "submit-Form",
+        this.enteredName,
+        this.enteredLastName,
+        this.game
+      );
       this.enteredName = "";
       this.enteredLastName = "";
-      this.game = null; 
+      this.game = null;
     },
 
-      validateName() {
+    validateName() {
       this.invalidNameInput = this.enteredName === "" ? true : false;
       this.invalidLastNameInput = this.enteredLastName === "" ? true : false;
     },
-    // editmodeForForm(game){
-    //     this.isEdit= true
-    //     this.editId = game.id,
-    //     this.enteredName = game.name
-    //     this.enteredLastName= game.lastname,
-    //     this.game= game.game
-    //     console.log('editmode for Form');
-    // },
 
-    
   },
 
   async created() {},
