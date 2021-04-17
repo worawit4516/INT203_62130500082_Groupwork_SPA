@@ -25,19 +25,27 @@
               <span> {{ game.game }}</span>
             </td>
             <td>
-              <button @click="showData(game)" class="bg-green-500 m-1 p-2 text-white">
+              <button
+                @click="editModeOpen(game)"
+                class="bg-green-500 m-1 p-2 text-white"
+              >
                 Edit
               </button>
 
-              <button @click="deleteGame(game.id)" class="bg-red-500 m-1 p-2 text-white">
+              <button
+                @click="deleteGame(game.id)"
+                class="bg-red-500 m-1 p-2 text-white"
+              >
                 Cancle
               </button>
+            
             </td>
+         
           </tr>
         </table>
       </div>
     </div>
-
+     <game-form v-if="EditMode" class="max-w-lg" @submitForm='editGame'></game-form>
     <bottom-bar class="mt-6"></bottom-bar>
   </div>
 </template>
@@ -47,17 +55,19 @@
 // import HelloWorld from '@/components/HelloWorld.vue'
 
 import BottomBar from "../components/BottomBar.vue";
+import GameForm from "../components/GameForm.vue";
 
 export default {
   components: {
     BottomBar,
+    GameForm,
   },
   data() {
     return {
-      isEdit: false,
-      editId: "",
+      EditMode: false,
       url: "http://localhost:5000/gameBasket",
       gamesResults: [],
+      gameforEdit:null
     };
   },
   methods: {
@@ -84,19 +94,48 @@ export default {
       }
     },
 
+    editModeOpen(game) {
+      this.EditMode = true;
+      this.gameforEdit=game
+    },
+
+   
+    async editGame(enteredName,enteredLastName,game) {
+      try {
+        
+        await fetch(`${this.url}/${this.gameforEdit.id}`, {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            name: enteredName,
+            lastname: enteredLastName,
+            game: game,
+          }),
+        });
+         this.gamesResults = await this.getGamesResult()
+         this.EditMode = false;
+      } catch (error) {
+        console.log(`Could not edit! ${error}`);
+      }
+    },
   },
   async created() {
     this.gamesResults = await this.getGamesResult();
+    
   },
 };
 </script>
-<style scoped>
-#BasketForm {
+<style>
+
+#BasketForm{
   position: absolute;
   top: 20%;
   left: 30%;
   display: inline-block;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -111,5 +150,11 @@ th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 12px 15px;
+}
+#game-form {
+  position: absolute;
+  top: 20%;
+  left: 33%;
+  display: inline-block;
 }
 </style>

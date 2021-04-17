@@ -1,7 +1,5 @@
 <template>
  <div>
-
-
     <div id="bottom-info" class=" flex font-sans -mt-6">
         <div>
             <p class="pl-44 p-5 pr-10" style="color: gray; font-size: 78%">

@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <form @submit.prevent="submitForm" id="game-form">
+  <div >
+    <form id="game-form" @submit.prevent="submitForm">
       <div class="p-3 bg-white rounded-xl max-w-lg hover:shadow">
         <h2 class="text-4xl pt-4 pb-4 ">
           เลือกเกมที่ต้องการซื้อ
@@ -89,6 +89,8 @@
         </button>
       </div>
     </form>
+
+    
   </div>
 </template>
 
@@ -99,12 +101,10 @@ export default {
     msg: String,
   },
   data() {
-    return {
+    return { 
       url: "http://localhost:5000/gameBasket",
       enteredName: "",
       enteredLastName: "",
-      isEdit: false,
-      editId: "",
       game: null,
       invalidLastNameInput: false,
       invalidNameInput: false,
@@ -114,80 +114,26 @@ export default {
   },
   methods: {
     submitForm() {
-      this.invalidNameInput = this.enteredName === "" ? true : false;
-      this.invalidLastNameInput = this.enteredLastName === "" ? true : false;
-      this.invalidGameInput = this.game === null ? true : false;
-
-      if (
-        this.enteredName !== "" &&
-        this.enteredLastName !== null &&
-        this.game !== null
-      ) {
-        if (this.isEdit) {
-          this.editSurvey({
-            id: this.editId,
-            name: this.enteredName,
-            lastname: this.enteredLastName,
-            game: this.game,
-          });
-        } else {
-          this.addNewGametoBasket({
-            name: this.enteredName,
-            lastname: this.enteredLastName,
-            game: this.game,
-          });
-        }
-      }
+      this.$emit('submit-Form',this.enteredName,this.enteredLastName,this.game)
       this.enteredName = "";
       this.enteredLastName = "";
-      this.game = null;
+      this.game = null; 
     },
 
-    validateName() {
+      validateName() {
       this.invalidNameInput = this.enteredName === "" ? true : false;
       this.invalidLastNameInput = this.enteredLastName === "" ? true : false;
     },
+    // editmodeForForm(game){
+    //     this.isEdit= true
+    //     this.editId = game.id,
+    //     this.enteredName = game.name
+    //     this.enteredLastName= game.lastname,
+    //     this.game= game.game
+    //     console.log('editmode for Form');
+    // },
 
-    async addNewGametoBasket(newgame) {
-      try {
-        await fetch(this.url, {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify({
-            name: newgame.name,
-            lastname: newgame.lastname,
-            game: newgame.game,
-          }),
-        });
-      } catch (error) {
-        console.log(`Could not save! ${error}`);
-      }
-    },
-    async editGame(editingGame) {
-      try {
-        await fetch(`${this.url}/${editingGame.id}`, {
-          method: "PUT",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify({
-            name: editingGame.name,
-            lastname: editingGame.lastname,
-            game: editingGame.game,
-          }),
-        });
-
-        this.isEdit = false;
-        this.editId = "";
-        this.enteredName = "";
-        this.enteredLastName = "";
-        this.game = null;
-      } catch (error) {
-        console.log(`Could not edit! ${error}`);
-      }
-    },
+    
   },
 
   async created() {},

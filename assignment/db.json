@@ -1,16 +1,34 @@
 {
   "gameBasket": [
     {
-      "name": "Earty",
-      "lastname": "Earty",
-      "game": "CyberPunk2077",
-      "id": 3
+      "name": "Worawit Makkasan",
+      "lastname": "Worawit Makkasan",
+      "game": "Farcry 5",
+      "id": 4
     },
     {
-      "name": "Earty",
-      "lastname": "Makkasan",
-      "game": "Farcry 5",
+      "name": "calculator",
+      "lastname": "calculator",
+      "game": "CyberPunk2077",
+      "id": 5
+    },
+    {
+      "name": "Worawit Makkasan",
+      "lastname": "Worawit Makkasan",
+      "game": "CyberPunk2077",
       "id": 6
+    },
+    {
+      "name": "Worawit Makkasan",
+      "lastname": "Worawit Makkasan",
+      "game": "Farcry 5",
+      "id": 7
+    },
+    {
+      "name": "Worawit Makkasan",
+      "lastname": "Worawit Makkasan",
+      "game": "CyberPunk2077",
+      "id": 8
     }
   ]
 }
